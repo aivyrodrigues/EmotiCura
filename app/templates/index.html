@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmotiCura – AI-Powered Mental Health Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>EmotiCura</h1>
+        <p>How are you feeling today?</p>
+        <form method="POST">
+            <input type="text" name="user_input" placeholder="Type your thoughts here..." required>
+            <button type="submit">Analyze Emotion</button>
+        </form>
+
+        {% if emotion %}
+        <div class="result">
+            <p><strong>Detected Emotion:</strong> {{ emotion }} (Confidence: {{ confidence }}%)</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
